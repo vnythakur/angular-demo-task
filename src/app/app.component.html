@@ -1,0 +1,65 @@
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav
+    #matSidenav
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    class="overflow-visible"
+  >
+    <div fxLayout="column" fxLayoutAlign="center center" class="sidenav-logo">
+      <img src="../assets/logo.png" alt="Santa" />
+    </div>
+
+    <mat-nav-list fxLayout="column" fxLayoutAlign="start center">
+      <a
+        mat-list-item
+        routerLink="/toy-factory"
+        routerLinkActive
+        #toyFactory="routerLinkActive"
+        [class.active]="toyFactory.isActive"
+      >
+        <mat-icon>sports_esports</mat-icon>
+        <span class="mat-body-2">Toys Factory</span>
+      </a>
+      <a
+        mat-list-item
+        routerLink="/delivery"
+        routerLinkActive
+        #delivery="routerLinkActive"
+        [class.active]="delivery.isActive"
+      >
+        <mat-icon>local_shipping</mat-icon>
+        <span class="mat-body-2">Delivery</span>
+      </a>
+      <a
+        mat-list-item
+        routerLink="/legal"
+        routerLinkActive
+        #legal="routerLinkActive"
+        [class.active]="legal.isActive"
+      >
+        <mat-icon>gavel</mat-icon>
+        <span class="mat-body-2">Legal</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>logout</mat-icon>
+        <span class="mat-body-2">Disconnect</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="app-toolbar">
+      <button
+        *ngIf="isHandset$ | async"
+        mat-icon-button
+        aria-label="Side Menu"
+        class="burger-menu"
+        (click)="matSidenav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
