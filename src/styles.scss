@@ -1,50 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .overflow-visible {
-    overflow: visible;
+  overflow: visible;
 }
 
 .burger-menu {
-    color: white;
+  color: white;
+}
+.hidden {
+  display: none;
 }
 
-
-
 mat-sidenav-content.mat-sidenav-content {
-    height: calc(100vh);
-    background-color: #ECEFF2;
+  height: calc(100vh);
+  background-color: #eceff2;
 
-    color: black;
+  color: black;
 
-    .app-toolbar {
-        background-color: green;
-    }
-    
+  .app-toolbar {
+    background-color: green;
+  }
 }
 
 mat-sidenav.mat-sidenav {
-    background: green;
-    height: calc(100vh);
-    width: 280px;
-    overflow: visible;
+  background: green;
+  height: calc(100vh);
+  width: 280px;
+  overflow: visible;
 
-    .sidenav-logo {
-        width: 100%;
-        height: 200px;
-        img {
-            width: 120px;
-        }
+  .sidenav-logo {
+    width: 100%;
+    height: 200px;
+    img {
+      width: 120px;
+    }
+  }
+
+  mat-nav-list.mat-nav-list {
+    .mat-list-item {
+      mat-icon.mat-icon {
+        margin-right: 8px;
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+.bg-red {
+  background-color: rgb(192, 3, 3);
+  color: white;
+}
+
+table.mat-table {
+  width: 100%;
+  background-color: white;
+
+  .mat-header-row,
+  .mat-row {
+    .mat-header-cell,
+    .mat-cell {
+      color: black;
     }
 
-    mat-nav-list.mat-nav-list {
-        .mat-list-item {
-            mat-icon.mat-icon {
-                margin-right: 8px;
-            }
-        }
+    &.bg-red {
+      .mat-cell {
+        color: white;
+      }
     }
+  }
+}
+
+.table-wrapper {
+  padding: 16px;
+}
+
+.heading {
+  color: red;
+}
+
+.delivery-bg {
+  img {
+    height: 150px;
+    transform: rotateY(180deg);
+  }
 }

@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { BreakpointService } from "../services/breakpoint.service";
 
 @Component({
-  selector: 'app-delivery',
-  templateUrl: './delivery.component.html',
-  styleUrls: ['./delivery.component.scss']
+  selector: "app-delivery",
+  templateUrl: "./delivery.component.html",
+  styleUrls: ["./delivery.component.scss"],
 })
 export class DeliveryComponent implements OnInit {
+  
+  isHandset$: Observable<boolean>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private breakpointService: BreakpointService
+  ) {
+    this.isHandset$ = this.breakpointService.isHandset$;
   }
 
+  ngOnInit(): void {}
+
+  
 }

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { DeliveryComponent } from './delivery.component';
+import { AppMaterialModule } from '../shared/app-material.module';
+import { DeliveryTableComponent } from './delivery-table/delivery-table.component';
 
 const routes: Routes = [
     {
@@ -15,9 +17,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AppMaterialModule
   ],
-  declarations: [DeliveryComponent],
+  declarations: [DeliveryComponent, DeliveryTableComponent],
   exports: [RouterModule],
 })
 export class DeliveryModule {}

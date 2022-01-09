@@ -28,6 +28,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 
 const modules = [
@@ -60,6 +64,8 @@ const modules = [
   MatAutocompleteModule,
   MatGridListModule,
   MatSelectModule,
+  MatPaginatorModule,
+  MatTableModule,
 ];
 
 @NgModule({

@@ -1,1 +1,9 @@
-<p>delivery works!</p>
+
+<div *ngIf="!(isHandset$ | async)" fxLayout="row" fxLayoutAlign="end center" class="delivery-bg">
+  <img src="../../assets/pine.png" alt="">
+</div>
+
+<div class="table-wrapper" >
+  <h1 class="heading">Delivery list</h1>
+  <app-delivery-table></app-delivery-table>
+</div>
